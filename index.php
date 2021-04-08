@@ -1,3 +1,4 @@
+<?php include('function.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +17,7 @@
 
     <link rel="stylesheet" href="default.css">
 
-    <link id="theme-style" rel="stylesheet" href="">
+    <link id="theme-style" rel="stylesheet" href="default.css">
 </head>
 
 <body>
@@ -106,13 +107,13 @@
                 <div class="social-links">
                     <img id="social_img" src="images/follow.jpg" alt="">
                     <h3>Find Me on <i style="color: #17a2b8;" class="fab fa-twitter"></i> &  <i style="color: royalblue" class="fab fa-facebook"></i> & <i style="color: steelblue;" class="fab fa-linkedin"></i> & <i style="color: rgba(0,0,0,0.75);" class="fab fa-github"></i></h3>
-                    <a target="_blank" href="#">Twitter: @abdullaev_dev</a>
+                    <a target="_blank" href="#"><i style="color: #17a2b8;" class="fab fa-twitter"></i> @abdullaev_dev</a>
                     <br>
-                    <a target="_blank" href="https://www.facebook.com/mukhammadamin.abdullaev.02">Facebook: @mukhammadamin.abdullaev.02</a>
+                    <a target="_blank" href="https://www.facebook.com/mukhammadamin.abdullaev.02"><i style="color: royalblue" class="fab fa-facebook"></i> @mukhammadamin.abdullaev.02</a>
                     <br>
-                    <a target="_blank" href="https://www.linkedin.com/in/mukhammadamin-abdullaev-3a0193203">Linkedin: @mukhammadamin-abdullaev</a>
+                    <a target="_blank" href="https://www.linkedin.com/in/mukhammadamin-abdullaev-3a0193203"><i style="color: steelblue;" class="fab fa-linkedin"></i> @mukhammadamin-abdullaev</a>
                     <br>
-                    <a target="_blank" href="https://github.com/Mukhammadamin2002">Github: @Mukhammadamin2002</a>
+                    <a target="_blank" href="https://github.com/Mukhammadamin2002"><i style="color: rgba(0,0,0,0.75);" class="fab fa-github"></i> @Mukhammadamin2002</a>
                 </div>
             </div>
         </div>
@@ -149,7 +150,7 @@
 
                 <div>
                     <div class="post">
-                        <img class="thumbnail" src="images/chatsystem.jpg" alt="">
+                        <img class="thumbnail" src="images/realtime.png" alt="">
                         <div class="post-preview">
                             <h6 class="post-title">LiveChat System</h6>
                             <p class="post-intro">LiveChat System have made with Laravel & Vue. You can easily use this application. You can connect and chat with active user in this app</p>
@@ -165,26 +166,60 @@
     <section class="s2">
         <div class="main-container">
             <h3 style="text-align: center;">Get in Touch</h3>
-
-            <form action="index.html" id="contact-form" method="post">
+            <h4 style="background-color: #17a2b8;" class="sent-notification"></h4>
+            <form  id="contact-form" method="post">
 
                 <label for="">Name</label>
-                <input type="text" class="input-field" name="name">
-
-                <label for="">Subject</label>
-                <input type="text" class="input-field" name="subject">
+                <input id="name" type="text" class="input-field" required>
 
                 <label for="">Email</label>
-                <input type="text" class="input-field" name="email">
+                <input id="email" type="text" class="input-field" required>
+                
+                <label for="">Subject</label>
+                <input id="subject" type="text" class="input-field" required>
 
                 <label for="">Message</label>
-                <textarea name="message" class="input-field"></textarea>
+                <textarea id="body" class="input-field" required></textarea>
 
-                <input style="cursor: pointer;" type="submit" id="submit-btn" value="Send">
+                <button style="cursor: pointer;" onclick="sendEmail()" type="button" id="submit-btn" value="Send">Send</button>
             </form>
         </div>
     </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function sendEmail(){
+            var name = $("#name");
+            var email = $("#email");
+            var subject = $("#subject");
+            var body = $('#body');
 
+            if(isNotEmpty(name) && isNotEmpty(email) && isNotEmpty(subject) && isNotEmpty(body)){
+                $.ajax({
+                    url: 'function.php',
+                    method: 'POST',
+                    dataType: 'json',   
+                    data:{
+                        name: name.val(),
+                        email: email.val(),
+                        subject: subject.val(),
+                        body: body.val()
+                    }, success: function(response){
+                        $('#contact-form')[0].reset();
+                        $('.sent-notification').text("Message sent Successfully");
+                    }
+                });
+            }
+        }
+        function isNotEmpty(caller){
+            if(caller.val()==""){
+                caller.css('border, 1px solid red');
+                return false;
+            }else{
+                caller.css('border', '');
+                return true;
+            }
+        }
+    </script>
     <script src="script.js"></script>
 
 </body>
