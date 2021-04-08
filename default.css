@@ -1,26 +1,28 @@
 :root{
+	--mainColor:#eaeaea;
+	--secondaryColor:#fff;
 
-    --mainColor: #eaeaea;
-    --secondaryColor: #fff;
-    
-    --borderColor: #c1c1c1;
+	--borderColor:#c1c1c1;
 
-    --mainText: black;
-    --secondaryText: #4b5156;
+	--mainText:black;
+	--secondaryText:#4b5156;
 
-    --themeDotBorder: #24192e;
+	--themeDotBorder:#24292e;
 
-    --previewBg: rgb(251, 249, 243, 0.8);
+	--previewBg:rgb(251, 249, 243, 0.8);
+	--previewShadow:#f0ead6;
 
-    --previewShadow: #f0ead6;
 
-    --buttonColor: black;
+	--buttonColor:black;
 }
 
-html,
-body{
+html, body{
     padding: 0;
     margin: 0;
+}
+
+body *{
+    transition: 0.3s;
 }
 
 h1, h2, h3, h4, h5, h6, strong{
@@ -104,6 +106,10 @@ h6 {font-size: 16px;}
     justify-content: space-between;
     align-items: center;
     background-color: var(--mainColor);
+}
+
+#navigation a{
+    color: var(--mainText);
 }
 
 #navigation{

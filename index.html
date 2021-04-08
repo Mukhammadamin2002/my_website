@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 
     <link rel="stylesheet" href="default.css">
+
+    <link id="theme-style" rel="stylesheet" href="">
 </head>
 
 <body>
@@ -42,10 +44,9 @@
                     <h5 style="text-align: center; line-height: 0;">Personalize Theme</h5>
                     
                     <div id="theme-options-wrapper">
-                        <div id="light-mode" class="theme-dot"></div>
-                        <div id="blue-mode" class="theme-dot"></div>
-                        <div id="green-mode" class="theme-dot"></div>
-                        <div id="purple-mode" class="theme-dot"></div>
+                        <div data-mode="light" id="light-mode" class="theme-dot"></div>
+                        <div data-mode="blue" id="blue-mode" class="theme-dot"></div>
+                        <div data-mode="purple" id="purple-mode" class="theme-dot"></div>
                     </div>
 
                     <p id="settings-note">*Theme settings will be saved <br> for
@@ -89,15 +90,15 @@
 
                     <div id="skills">
                         <ul>
-                            <li><i style="color: orange;" class="fab fa-html5"></i>Html</li>
-                            <li><i style="color: #17b5ce;" class="fab fa-css3-alt"></i>Css3</li>
-                            <li><i style="color: #24192e;" class="fab fa-bootstrap"></i>Bootstrap</li>
+                            <li><i style="color: orange; margin-right: 5px;" class="fab fa-html5"></i>Html</li>
+                            <li><i style="color: #17b5ce; margin-right: 5px;" class="fab fa-css3-alt"></i>Css3</li>
+                            <li><i style="color: #24192e; margin-right: 5px;" class="fab fa-bootstrap"></i>Bootstrap</li>
                         </ul>
 
                         <ul>
-                            <li><i style="color: #17a2b8;"  class="fab fa-php"></i>PHP</li>
-                            <li><i style="color: #FC6058;" class="fab fa-laravel"></i>Laravel</li>
-                            <li><i style="color: rgb(209, 140, 10);" class="fas fa-database"></i>MySQL</li>
+                            <li><i style="color: #17a2b8; margin-right: 5px;"  class="fab fa-php"></i>PHP</li>
+                            <li><i style="color: #FC6058; margin-right: 5px;" class="fab fa-laravel"></i>Laravel</li>
+                            <li><i style="color: rgb(209, 140, 10); margin-right: 5px;" class="fas fa-database"></i>MySQL</li>
                         </ul>
                     </div>
                 </div>
@@ -183,6 +184,8 @@
             </form>
         </div>
     </section>
+
+    <script src="script.js"></script>
 
 </body>
 
