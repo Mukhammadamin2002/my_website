@@ -153,7 +153,7 @@
                         <img class="thumbnail" src="images/realtime.png" alt="">
                         <div class="post-preview">
                             <h6 class="post-title">LiveChat System</h6>
-                            <p class="post-intro">LiveChat System have made with Laravel & Vue. You can easily use this application. You can connect and chat with active user in this app</p>
+                            <p class="post-intro">LiveChat System has made with Laravel & Vue. You can easily use this application. You can connect and chat with active user in this app</p>
                             <a href="#">Read More</a>
                         </div>
                     </div>
