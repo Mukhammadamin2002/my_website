@@ -166,7 +166,7 @@
     <section class="s2">
         <div class="main-container">
             <h3 style="text-align: center;">Get in Touch</h3>
-            <h4 style="background-color: #17a2b8;" class="sent-notification"></h4>
+            <h4 style="background-color: #17a2b8; text-align: center;" class="sent-notification"></h4>
             <form  id="contact-form" method="post">
 
                 <label for="">Name</label>
