@@ -25,7 +25,7 @@
     <section class="s1">
         <div class="main-container">
             <div class="greeting-wrapper">
-                <h1>Hi, I'm Mukhammadamin Abdullaev</h1>
+                <h1>Hi, I'm Abdullaev</h1>
             </div>
 
             <div class="intro-wrapper">
